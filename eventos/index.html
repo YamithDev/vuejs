@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<title>Vue.js</title>
+	<meta name="description" content="">
+</head>
+<body>
+	<main>
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-md-6">
+					<ul>
+						<li v-for="tarea in tareas">{{tarea}}</li>						
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<form v-on:submit.prevent="agregarTarea">
+						<input type="text" class="form-control" placeholder="Introduce tu tarea" autofocus required v-model="nuevaTarea">
+						<input type="submit" class="btn btn-primary mt-1" value="Enviar Tarea">
+					</form>
+				</div>
+				<pre>{{$data}}</pre>
+			</div>
+		</div>
+	</main>
+
+	<script src="js/vue.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
