@@ -29,8 +29,18 @@ const vm = new Vue({
 			this.nuevaTarea = null;
 		}
 	},
-	computhed:{
+	computed:{
+		mensajeAlReves(){
+			return this.mensaje.split('').reverse().join('');
+		},
 
+		tareasConPrioridad(){
+			return this.tareas.filter((tarea)=>tarea.prioridad);
+		},
+
+		tareasPorAntiguedad(){
+			return this.tareas.sort((a,b)=>b.antiguedad - a.antiguedad);
+		}
 	},
 });
 
