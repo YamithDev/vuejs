@@ -1,45 +1,31 @@
 const vm = new Vue({
 	el:'main',
 	data:{
-		mensaje:'Hola mundo',
-		nuevoJuego: null,
+		busqueda: '',
+		minimo: 5,
 		juegos:[{
 			titulo: 'Battlefield 1',
 			genero:'FPS',
-			puntuacion:23,
+			puntuacion:7,
 		},
 		{
 			titulo: 'Pubg',
 			genero:'Battle Royale',
-			puntuacion:135,
+			puntuacion:9,
 		},
 		{
 			titulo: 'Pro Evolution Soccer',
 			genero:'Deportes',
-			puntuacion:378,
+			puntuacion:4,
 		}],
 	},
-	methods:{
-		agregarJuego(){
-			this.juegos.unshift({
-				titulo: this.nuevoJuego,
-				genero: '---',
-				puntuacion:0,
-			});
-			this.nuevoJuego = null;
-		}
-	},
 	computed:{
-		mensajeAlReves(){
-			return this.mensaje.split('').reverse().join('');
+		mejoresJuegos(){
+			return this.juegos.filter((juego)=>juego.puntuacion >= this.minimo);
 		},
 
-		juegosPorGenero(){
-			return this.juegos.filter((juego)=>juego.genero);
-		},
-
-		juegosPorPuntuacion(){
-			return this.juegos.sort((a,b)=>b.puntuacion - a.puntuacion);
+		bucarJuegos(){
+			return this.juegos.filter((juego)=>juego.titulo.includes(this.busqueda));
 		}
 	},
 });

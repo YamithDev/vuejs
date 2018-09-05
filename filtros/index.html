@@ -12,19 +12,18 @@
 		<div class="container">
 			<div class="row mt-5">
 				<div class="col-md-6">
-					<h1>{{ mensajeAlReves }}</h1>
+					<input type="search" placeholder="Buscar" v-model="busqueda" class="form-control">
 					<ul>
-						<li v-for="juego in juegosPorGenero">
+						<li v-for="juego in bucarJuegos">
 							{{juego.titulo}}
 						</li>						
 					</ul>
 				</div>
 				<div class="col-md-6">
-					<form v-on:submit.prevent="agregarJuego">
-						<input type="text" class="form-control" placeholder="Introduce tu tarea" autofocus required v-model="nuevoJuego">
-						<input type="submit" class="btn btn-primary mt-1" value="Agregar Juego">
-					</form>
+					<input type="range" min="0" max="10" v-model="minimo">
 				</div>
+			</div>
+			<div class="row">
 				<pre>{{$data}}</pre>
 			</div>
 		</div>
