@@ -1,4 +1,4 @@
-new Vue({
+const instancia = new Vue({
 	el:'main',
 	data:{
 		tareas:[

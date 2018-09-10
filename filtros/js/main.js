@@ -16,7 +16,7 @@ const vm = new Vue({
 		{
 			titulo: 'Pro Evolution Soccer',
 			genero:'Deportes',
-			puntuacion:4,
+			puntuacion:5,
 		}],
 	},
 	computed:{
@@ -24,7 +24,7 @@ const vm = new Vue({
 			return this.juegos.filter((juego)=>juego.puntuacion >= this.minimo);
 		},
 
-		bucarJuegos(){
+		buscarJuegos(){
 			return this.juegos.filter((juego)=>juego.titulo.includes(this.busqueda));
 		}
 	},
