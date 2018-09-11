@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 /*jshint -W104*/
 new Vue({
+=======
+const instancia = new Vue({
+>>>>>>> 0bcd89c9c649d301e67761219afb61d6d1503b08
 	el:'main',
 	data:{
 		tareas:[
