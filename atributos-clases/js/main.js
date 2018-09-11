@@ -1,3 +1,4 @@
+/*jshint -W104*/
 new Vue({
 	el:'main',
 	data:{
