@@ -1,4 +1,5 @@
 /*jshint -W104*/
+/*jshint -W119*/
 new Vue({
 	el:'main',
 	data:{
@@ -15,4 +16,9 @@ new Vue({
 			tarea.completado = !tarea.completado;
 		}
 	},
+	computed:{
+		tareasCompletadas(){
+			return this.tareas.filter((tarea)=>tarea.completado);
+		}
+	}
 });
