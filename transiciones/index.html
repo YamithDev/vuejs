@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Vue Js</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="container mt-5">
+		<main>
+			<div class="row">
+				<div class="col-md-6">
+					<button @click="mostrar =! mostrar" class="btn btn-primary">Mostar/Ocultar</button>
+					<transition name="aparecer" appear>
+						<h1 v-if="mostrar" v-text="mensajes.transicion" class="title"></h1>
+					</transition>
+					<transition name="bote">
+						<h1 v-if="mostrar" v-text="mensajes.animacion" class="title"></h1>
+					</transition>
+					<transition
+						name="animate.css"
+						enter-active-class="animated rotateInUpLeft"
+						leave-active-class="animated zoomOutUp"
+					>
+						<h1 v-if="mostrar" v-text="mensajes.animationCustom" class="title"></h1>
+					</transition>
+					<transition name="aparecer" mode="out-in">
+						<h1 
+							v-if="mostrar" v-text="mensajes.entreElementos"
+							class="title" key="aparecer" 
+						></h1>
+						<h1 v-else key="ocultar">No hay Mensaje</h1>
+					</transition>
+				</div>
+			</div>
+			<div class="row">
+				<pre>{{$data}}</pre>
+			</div>
+		</main>
+	</div>
+	<script src="js/vue.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
