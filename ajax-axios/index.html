@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs Axios</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="container mt-5">
+		<main>
+			<div class="row">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4">
+					<div class="card"  v-for="persona in personas" style="width: 22rem;">
+	  				<img class="card-img-top" :src="persona.picture.thumbnail" :alt="persona.name.first" width="10%">
+	  				<div class="card-body">	
+	    				<h5 class="card-title">{{persona.name.first}}&nbsp;{{persona.name.last}}</h5>
+	    				<p class="card-text">{{persona.location.city}}</p>
+	    				<div class="text-center form-group">
+	    					<a href="#" class="btn btn-outline-danger text-center">
+	    						<span class="fa fa-heart"></span>
+	    						Like
+	    					</a>
+	    				</div>
+	  				</div>
+					</div>
+				</div>
+				<div class="col-lg-4"></div>
+			</div>
+		</main>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
