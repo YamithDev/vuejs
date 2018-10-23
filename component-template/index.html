@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Component-Template</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="container mt-5">
+		<main>
+			<div class="row">
+				<div class="col-md-6">
+					<elegir-ganador :listado="personas" inline-template>
+						<div class="form-group">
+							<h2 v-if="ganador">El ganador es: <span :class="{ganador: ganador}">{{ganador}}</span></h2>
+							<template v-else>
+								<h1 class="card-title">Participantes</h1>
+								<ul class="list-group">
+									<li class="list-group-item" v-for="persona in  listado">
+										{{persona}}
+									</li>
+								</ul>
+							</template>
+							<br/>
+							<button class="btn btn-primary form-control" @click="elegirGanador">Elegir Ganador</button>
+						</div>
+					</elegir-ganador>
+				</div>
+				<div class="col-md-6">
+					<pre>
+						{{$data}}
+					</pre>
+				</div>
+			</div>
+		</main>
+		<!-- <template id="elegir-ganador-template">
+			<div class="form-group">
+				<h2 v-if="ganador">El ganador es: <span :class="{ganador: ganador}">{{ganador}}</span></h2>
+				<template v-else>
+					<h1 class="card-title">Participantes</h1>
+					<ul class="list-group">
+						<li class="list-group-item" v-for="persona in  listado">
+							{{persona}}
+						</li>
+					</ul>
+				</template>
+				<br/>
+				<button class="btn btn-primary form-control" @click="elegirGanador">Elegir Ganador</button>
+			</div>
+		</template> -->
+	</div>
+	
+	<script src="js/vue.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

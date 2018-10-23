@@ -1,0 +1,9 @@
+button{
+	cursor: pointer;
+}
+.ganador{
+	background-color: #C1EA99;
+	/* text-decoration: line-through; */
+	border-radius:5px;
+	padding:3px;
+}
