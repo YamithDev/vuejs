@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Props Validation</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <main>
+      <div class="row">
+        <div class="col">
+          <div class="card" v-for="candidato in candidatos">
+            <div class="card-body">
+              <candidato :nombre="candidato.name.first" :correo="candidato.email" :imagen="candidato.picture.thumbnail">
+              </candidato>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <template id="candidato-template">
+      <blockquote class="blockquote">
+        <img class="img-fluid" :src="imagen" align="right">
+        <p><i class="material-icons">face</i><b>Nombre:</b> {{nombre}}</p>
+        <p><i class="material-icons">email</i><b>Correo:</b> {{correo}}</p>
+        <hr>
+      </blockquote>
+    </template>
+  </div>
+
+  <script src="js/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
