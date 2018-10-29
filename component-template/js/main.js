@@ -1,5 +1,5 @@
-/*jshint -W104*/
-/*jshint -W119*/
+/* jshint -W104 */
+/* jshint -W119 */
 Vue.component('elegir-ganador',{
 	props:['listado'],
 	// template:`#elegir-ganador-template`,
@@ -17,7 +17,6 @@ Vue.component('elegir-ganador',{
 		};
 	}
 });
-
 
 new Vue({
 	el:'main',

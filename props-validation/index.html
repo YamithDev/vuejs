@@ -18,7 +18,8 @@
         <div class="col">
           <div class="card" v-for="candidato in candidatos">
             <div class="card-body">
-              <candidato :nombre="candidato.name.first" :correo="candidato.email" :imagen="candidato.picture.thumbnail">
+              <candidato :nombre="candidato.name.first" :correo="candidato.email"
+               :imagen="candidato.picture.thumbnail">
               </candidato>
             </div>
           </div>
