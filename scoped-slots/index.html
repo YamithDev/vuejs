@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuej.Js</title>
+</head>
+<body>
+  <main>
+    <mis-tareas :listado="tareas">
+      <template slot-scope="datos">
+        <li>{{datos.titulo}}</li>
+      </template>
+    </mis-tareas>
+    <mis-tareas :listado="tareas">
+      <template slot-scope="datos">
+        <li>🐱{{datos.titulo}}</li>
+      </template>
+    </mis-tareas>
+  </main>
+
+  <template id="mis-tareas-template">
+    <ul>
+      <slot v-for="tarea in listado" :titulo="tarea.titulo">
+      </slot>
+    </ul>
+  </template>
+
+  <script src="js/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
