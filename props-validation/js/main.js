@@ -3,8 +3,14 @@
 
 Vue.component('candidato',{
   props: {
-    nombre: String,
-    correo: String,
+    nombre: {
+      type:[String, Array], //null acepta todo tipo
+      required:true
+    },
+    correo: {
+      type:String, 
+      default:'yamidcueto@prueba.com'
+    },
     imagen: String
   },
   template: '#candidato-template',
