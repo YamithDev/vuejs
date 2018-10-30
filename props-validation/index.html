@@ -19,7 +19,7 @@
           <div class="card" v-for="candidato in candidatos">
             <div class="card-body">
               <candidato :nombre="candidato.name.first" :correo="candidato.email"
-               :imagen="candidato.picture.thumbnail">
+               :imagen="candidato.picture.thumbnail" :location="candidato.location">
               </candidato>
             </div>
           </div>
@@ -31,6 +31,9 @@
         <img class="img-fluid" :src="imagen" align="right">
         <p><i class="material-icons">face</i><b>Nombre:</b> {{nombre}}</p>
         <p><i class="material-icons">email</i><b>Correo:</b> {{correo}}</p>
+        <ul>
+          <li v-for="(value, key, index) in location">{{value}}</li>
+        </ul>
         <hr>
       </blockquote>
     </template>

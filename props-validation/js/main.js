@@ -11,7 +11,15 @@ Vue.component('candidato',{
       type:String, 
       default:'yamidcueto@prueba.com'
     },
-    imagen: String
+    imagen: String,
+    location:{
+      type:Object,
+      default(){
+        return{
+          ciudad:'Valencia'
+        }
+      }
+    },
   },
   template: '#candidato-template',
 });
