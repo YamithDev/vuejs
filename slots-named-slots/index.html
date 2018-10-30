@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Vue.Js</title>
+</head>
+<body>
+  <main>
+    <alerta tipo="alerta_advertencia" posicion="alerta_arriba_derecha">
+      <template slot="header">Ten cuidado!!</template>
+      <template slot="contenido">Estas seguro que deseas continuar? </template>
+      <template slot="footer">Es bajo tu responsabilidad</template>
+    </alerta>
+    <alerta tipo="alerta" posicion="alerta_arriba_izquierda">
+      <template slot="header">Bienvenido!!</template>
+      <template slot="contenido">Bienvenido al sistema de alertas con slots de vuejs</template>
+      <template slot="footer">Disfruta tu experiencia</template>
+    </alerta>
+    <alerta tipo="alerta_error" posicion="alerta_abajo_derecha">
+      <template slot="header">Lo sentimos :(</template>
+      <template slot="contenido">No estás autorizado para entrar</template>
+      <template slot="footer">Vuelve cuando puedas acceder</template>
+    </alerta>
+    <alerta tipo="alerta_exito" posicion="alerta_abajo_izquierda">
+      <template slot="header">Adelante</template>
+      <template slot="contenido">Bienvenido a nuestro sistema para adultos puedes hacer lo que mejor gustes</template>
+      <template slot="footer">A Disfrutar!!</template>
+    </alerta>
+  </main>
+  <script src="js/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
