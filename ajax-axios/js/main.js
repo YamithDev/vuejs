@@ -1,3 +1,6 @@
+/* jshint -W104 */
+/* jshint -W119 */
+
 new Vue({
 	el:'main',
 	mounted(){
